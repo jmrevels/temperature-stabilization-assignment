@@ -11,7 +11,6 @@
 
 #define numExternals 4     // Number of external processes 
 
-
 int * establishConnectionsFromExternalProcesses()
 {
 
@@ -135,7 +134,7 @@ int main(void)
         updated_msg.T = updatedTemp;
         updated_msg.Index = 0;                // Index of central server 
 
-
+	
         // Send updated temperatures to the 4 external processes 
         for (int i = 0;  i < numExternals; i++){
             if (send(client_socket[i], (const void *)&updated_msg, sizeof(updated_msg), 0) < 0){
@@ -146,9 +145,12 @@ int main(void)
 
         printf("\n");
 
+	float eps = 1e-3i;
         // Check stability condition 
-        if (updatedTemp == 0)
-            stable = true; 
+        if (abs(updatedTemp) <= eps){
+	    printf("Done!\n");
+            stable = true;
+	}
 
     }
  

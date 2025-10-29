@@ -36,7 +36,7 @@ int main (int argc, char *argv[])
     server_addr.sin_port = htons(2000);
     server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
         
-
+		
     // Send connection request to server:
     if(connect(socket_desc, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0){
         printf("Unable to connect\n");
@@ -44,7 +44,7 @@ int main (int argc, char *argv[])
     }
     printf("Connected with server successfully\n");
     printf("--------------------------------------------------------\n\n");
-       
+
     // Package to the sent to server 
     the_message = prepare_message(externalIndex, initialTemperature); 
 
@@ -63,7 +63,7 @@ int main (int argc, char *argv[])
     
     printf("--------------------------------------------------------\n");
     printf("Updated temperature sent by the Central process = %f\n", the_message.T);
-    
+	
     // Close the socket:
     close(socket_desc);
     
