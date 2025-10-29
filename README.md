@@ -1,12 +1,16 @@
 # Submission
 The program ran by the server listening for connection attempts from the clients, and once the clients connected, both client and server would exchange temperatures until stabilized. 
+
 Pictured below are the four clients running (although they do not vary much)
+
 ![OStemp1.png](./OStemp1.png)
 ![OStemp2.png](./OStemp2.png)
 ![OStemp3.png](./OStemp3.png)
 ![OStemp4.png](./OStemp4.png)
 
 And the server running
+
+
 ![OStempserver.png](./OStempserver.png)
 
 
